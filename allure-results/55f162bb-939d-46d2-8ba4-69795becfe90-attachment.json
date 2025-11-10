@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"a.btn btn-black navbar-btn\"}\n  (Session info: chrome=142.0.7444.135)",
+  "stacktrace": "Symbols not available. Dumping unresolved backtrace:\n\t0x7ff6e3f3a215\n\t0x7ff6e3c92620\n\t0x7ff6e3a216dd\n\t0x7ff6e3a7a27e\n\t0x7ff6e3a7a58c\n\t0x7ff6e3aced77\n\t0x7ff6e3acbaba\n\t0x7ff6e3a6b0ed\n\t0x7ff6e3a6bf63\n\t0x7ff6e3f65d40\n\t0x7ff6e3f5fe6a\n\t0x7ff6e3f80fe5\n\t0x7ff6e3cad70e\n\t0x7ff6e3cb4e0f\n\t0x7ff6e3c9b7b4\n\t0x7ff6e3c9b96f\n\t0x7ff6e3c818d8\n\t0x7ffa272ee8d7\n\t0x7ffa2884c53c\n"
+}

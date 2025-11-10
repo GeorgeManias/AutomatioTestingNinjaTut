@@ -1,0 +1,2 @@
+element click intercepted: WebDriverError: element click intercepted: Element <a href="/login">...</a> is not clickable at point (846, 40). Other element would receive the click: <div class="fc-dialog-overlay"></div>
+  (Session info: chrome=142.0.7444.135) when running "element/f.958D781BE3C50695DC7753CE16C04F9D.d.460ED38A358B4EDE6359A9BE355A9131.e.13/click" with method "POST"
