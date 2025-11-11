@@ -1,0 +1,3 @@
+invalid session id: WebDriverError: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=142.0.7444.162) when running "element/f.DA98D71545DBCA277E7098474E6B9D70.d.E9B40BD4504296A1F2F4F92EF540A5C0.e.15/click" with method "POST"
