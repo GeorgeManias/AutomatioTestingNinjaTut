@@ -33,7 +33,12 @@ describe('Registration Testing', () => {
     await submitButton.click();
 
 
-    // 3) Fill password 
+    // 3.0) Fill Gender Title
+    const genderTitle = await $('label[for="id_gender1"]');
+    await genderTitle.waitForDisplayed([10000]);
+    await genderTitle.click();
+
+    // 3.1) Fill password 
     const passwordField = await $('[data-qa="password"]');
     await passwordField.waitForDisplayed({ timeout: 10000 });
     await passwordField.setValue("Test1234!");
@@ -50,3 +55,4 @@ describe('Registration Testing', () => {
 });
 
 //npx wdio run ./wdio.conf.js --spec ./test/specs/tc-rf-001-registration.e2e.js
+//npx wdio run ./wdio.conf.js --spec ./test/specs/testLab.js
