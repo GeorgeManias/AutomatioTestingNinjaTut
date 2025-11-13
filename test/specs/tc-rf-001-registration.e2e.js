@@ -1,4 +1,4 @@
-const { nameGenerator, emailGenerator } = require('./helper/utils/generator');
+const { nameGenerator, emailGenerator, randomDate, getDayNumber, getMonthNumber, getYearNumber } = require('./helper/utils/generator');
 const { login } = require('./helper/utils/navigation');
 
 describe('Registration Testing', () => {
@@ -42,6 +42,31 @@ describe('Registration Testing', () => {
     const passwordField = await $('[data-qa="password"]');
     await passwordField.waitForDisplayed({ timeout: 10000 });
     await passwordField.setValue("Test1234!");
+
+    const randomDateValue = randomDate()
+
+    const dayDropdown = await $('[data-qa="days"]');
+    await dayDropdown.waitForDisplayed({ timeout: 10000 });
+    await dayDropdown.click();
+    const dayOption = await $(`//select[@data-qa="days"]/option[@value="${getDayNumber(randomDateValue)}"]`);
+    await dayOption.click();
+
+    const monthDropdown = await $('[data-qa="months"]');
+    await monthDropdown.waitForDisplayed({ timeout: 10000 });
+    await dayDropdown.click();
+    const monthOption = await $(`//select[@data-qa="months"]/option[@value="${getMonthNumber(randomDateValue)}"]`);
+    await monthOption.click();
+
+    const yearDropdown = await $('[data-qa="years"]');
+    await yearDropdown.waitForDisplayed({ timeout: 10000 });
+    await yearDropdown.click();
+
+    const yearOption = await $(`//select[@data-qa="years"]/option[@value="${getYearNumber(randomDateValue)}"]`);
+    await yearOption.click();
+
+
+
+    console.log(getDayNumber(randomDateValue), getMonthNumber(randomDateValue), getYearNumber(randomDateValue));
 
 
 

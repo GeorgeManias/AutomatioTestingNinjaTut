@@ -21,6 +21,15 @@ function getDayNumber(dateString) {
     return date.getDate();
 }
 
+function getMonthNumber(dateString) {
+    const date = new Date(dateString);
+    return date.getMonth() + 1; // +1 γιατί 
+}
+
+function getYearNumber(dateString){
+  const date = new Date(dateString);
+  return date.getFullYear();
+}
 
 
-module.exports = { nameGenerator, emailGenerator, randomDate };
+module.exports = { nameGenerator, emailGenerator, randomDate, getDayNumber, getMonthNumber, getYearNumber };
