@@ -69,11 +69,6 @@ describe('Registration Testing', () => {
     console.log(getDayNumber(randomDateValue), getMonthNumber(randomDateValue), getYearNumber(randomDateValue));
 
 
-
-
-    // Help Step Wait
-    await browser.pause(30000);
-
   });
 
 
