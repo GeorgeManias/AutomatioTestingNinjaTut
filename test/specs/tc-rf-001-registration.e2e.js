@@ -7,23 +7,23 @@ describe('Registration Testing', () => {
     await login();
 
 
-    //1) Select the Register button
+    
     const registerButton = await $('a[href="/login"]');
     await registerButton.waitForDisplayed({ timeout: 10000 });
     await registerButton.click();
 
-    //Create unique name      
+    
     const userName = nameGenerator();
 
-    //Create unique email
+    
     const userEmail = emailGenerator();
 
-    //2.1 Type SignUp name
+    
     const signUpName = await $('input[placeholder="Name"]');
     await signUpName.waitForDisplayed([10000]);
     await signUpName.setValue(userName);
 
-    //2.2 
+    
     const signUpEmail = await $('[data-qa="signup-email"]');
     await signUpEmail.waitForDisplayed([10000]);
     await signUpEmail.setValue(userEmail);
@@ -33,12 +33,12 @@ describe('Registration Testing', () => {
     await submitButton.click();
 
 
-    // 3.0) Fill Gender Title
+    
     const genderTitle = await $('label[for="id_gender1"]');
     await genderTitle.waitForDisplayed([10000]);
     await genderTitle.click();
 
-    // 3.1) Fill password 
+    
     const passwordField = await $('[data-qa="password"]');
     await passwordField.waitForDisplayed({ timeout: 10000 });
     await passwordField.setValue("Test1234!");
@@ -65,9 +65,19 @@ describe('Registration Testing', () => {
     await yearOption.click();
 
 
-
     console.log(getDayNumber(randomDateValue), getMonthNumber(randomDateValue), getYearNumber(randomDateValue));
 
+    const newsletter = await $('input[id="newsletter"]');
+    await newsletter.click();
+
+
+    const specialOffers = await $('input[id="optin"]');
+    await specialOffers.click();
+
+
+
+    // Help Step Wait
+    await browser.pause(30000);
 
   });
 

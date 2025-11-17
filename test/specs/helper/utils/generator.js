@@ -2,10 +2,12 @@ function nameGenerator() {
   const nowD = Date.now();
   return `test_user_${nowD}`;
 }
+
 function emailGenerator() {
   const nowD = Date.now();
   return `test_user_${nowD}@test.com`;
 }
+
 
 function randomDate() {
     const start = new Date("1900-01-01");  
