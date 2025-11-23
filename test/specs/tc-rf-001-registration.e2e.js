@@ -1,4 +1,4 @@
-const { nameGenerator, emailGenerator, randomDate, getDayNumber, getMonthNumber, getYearNumber } = require('./helper/utils/generator');
+const { nameGenerator, emailGenerator, getRandomGender, randomDate, getDayNumber, getMonthNumber, getYearNumber, getRandomAlfanumeric, getRandomTelephone, selectRandomCountry } = require('./helper/utils/generator');
 const { login } = require('./helper/utils/navigation');
 
 describe('Registration Testing', () => {
@@ -7,23 +7,23 @@ describe('Registration Testing', () => {
     await login();
 
 
-    
+
     const registerButton = await $('a[href="/login"]');
     await registerButton.waitForDisplayed({ timeout: 10000 });
     await registerButton.click();
 
-    
+
     const userName = nameGenerator();
 
-    
+
     const userEmail = emailGenerator();
 
-    
+
     const signUpName = await $('input[placeholder="Name"]');
     await signUpName.waitForDisplayed([10000]);
     await signUpName.setValue(userName);
 
-    
+
     const signUpEmail = await $('[data-qa="signup-email"]');
     await signUpEmail.waitForDisplayed([10000]);
     await signUpEmail.setValue(userEmail);
@@ -33,12 +33,12 @@ describe('Registration Testing', () => {
     await submitButton.click();
 
 
-    
-    const genderTitle = await $('label[for="id_gender1"]');
-    await genderTitle.waitForDisplayed([10000]);
-    await genderTitle.click();
 
-    
+    const randomGender = getRandomGender();
+    const genderOption = await $(`label[for="${randomGender}"]`);
+    await genderOption.click();
+
+
     const passwordField = await $('[data-qa="password"]');
     await passwordField.waitForDisplayed({ timeout: 10000 });
     await passwordField.setValue("Test1234!");
@@ -75,9 +75,40 @@ describe('Registration Testing', () => {
     await specialOffers.click();
 
 
+    const firstName = await $('input[data-qa="first_name"]');
+    await firstName.setValue(getRandomAlfanumeric(10));
 
-    // Help Step Wait
-    await browser.pause(30000);
+    const lastName = await $('input[data-qa="last_name"]');
+    await lastName.setValue(getRandomAlfanumeric(10));
+
+    const enterprise = await $('input[name="company"]');
+    await enterprise.setValue(getRandomAlfanumeric(8));
+
+    const address1 = await $('input[name="address1"]');
+    await address1.setValue(getRandomAlfanumeric(12));
+
+    const address2 = await $('input[name="address2"]');
+    await address2.setValue(getRandomAlfanumeric(14));
+
+    const state = await $('input[data-qa="state"]');
+    await state.setValue(getRandomAlfanumeric(6));
+
+    const city = await $('input[data-qa="city"]');
+    await city.setValue(getRandomAlfanumeric(9));
+
+    const zipcode = await $('input[data-qa="zipcode"]');
+    await zipcode.setValue(getRandomAlfanumeric(5));
+
+    const mobileNumber = await $('input[data-qa="mobile_number"]');
+    await mobileNumber.setValue(getRandomTelephone(10));
+
+    const randomCountry = selectRandomCountry();   // random 
+    const countrySelect = await $('#country');     // dropdown
+    await countrySelect.selectByVisibleText(randomCountry);  // value
+
+
+    const createAccountButton = await $('button[data-qa="create-account"]');
+    await createAccountButton.click();
 
   });
 

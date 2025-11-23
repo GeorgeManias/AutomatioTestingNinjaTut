@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//select[@data-qa=\"days\"]/option[@value=\"24\"]"
+}

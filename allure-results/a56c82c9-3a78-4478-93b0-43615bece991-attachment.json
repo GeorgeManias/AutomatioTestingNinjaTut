@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"input[data-qa=\"create-account\"]\"}\n  (Session info: chrome=142.0.7444.176)",
+  "stacktrace": "Symbols not available. Dumping unresolved backtrace:\n\t0x7ff7887da235\n\t0x7ff788532650\n\t0x7ff7882c16dd\n\t0x7ff78831a27e\n\t0x7ff78831a58c\n\t0x7ff78836ed77\n\t0x7ff78836baba\n\t0x7ff78830b0ed\n\t0x7ff78830bf63\n\t0x7ff788805d60\n\t0x7ff7887ffe8a\n\t0x7ff788821005\n\t0x7ff78854d73e\n\t0x7ff788554e3f\n\t0x7ff78853b7e4\n\t0x7ff78853b99f\n\t0x7ff788521908\n\t0x7ffce571e8d7\n\t0x7ffce71cc53c\n"
+}
